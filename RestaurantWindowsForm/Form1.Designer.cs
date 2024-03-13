@@ -42,6 +42,7 @@
             buttonClear = new Button();
             labelFoodType = new Label();
             comboBoxFoodType = new ComboBox();
+            buttonDelete = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewMenu).BeginInit();
             tableLayoutPanelInsert.SuspendLayout();
             SuspendLayout();
@@ -92,11 +93,12 @@
             // 
             // tableLayoutPanelInsert
             // 
-            tableLayoutPanelInsert.ColumnCount = 4;
+            tableLayoutPanelInsert.ColumnCount = 5;
             tableLayoutPanelInsert.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanelInsert.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanelInsert.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanelInsert.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanelInsert.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanelInsert.Controls.Add(textBoxMenuName, 1, 0);
             tableLayoutPanelInsert.Controls.Add(labelMenu, 0, 0);
             tableLayoutPanelInsert.Controls.Add(buttonAddMenu, 1, 3);
@@ -107,6 +109,7 @@
             tableLayoutPanelInsert.Controls.Add(buttonClear, 3, 3);
             tableLayoutPanelInsert.Controls.Add(labelFoodType, 0, 2);
             tableLayoutPanelInsert.Controls.Add(comboBoxFoodType, 1, 2);
+            tableLayoutPanelInsert.Controls.Add(buttonDelete, 4, 3);
             tableLayoutPanelInsert.Location = new Point(371, 89);
             tableLayoutPanelInsert.Name = "tableLayoutPanelInsert";
             tableLayoutPanelInsert.RowCount = 4;
@@ -119,7 +122,7 @@
             // 
             // buttonAddMenu
             // 
-            buttonAddMenu.Location = new Point(99, 107);
+            buttonAddMenu.Location = new Point(99, 100);
             buttonAddMenu.Name = "buttonAddMenu";
             buttonAddMenu.Size = new Size(94, 29);
             buttonAddMenu.TabIndex = 2;
@@ -129,7 +132,7 @@
             // 
             // editButton
             // 
-            editButton.Location = new Point(285, 107);
+            editButton.Location = new Point(285, 100);
             editButton.Name = "editButton";
             editButton.Size = new Size(94, 29);
             editButton.TabIndex = 4;
@@ -159,14 +162,14 @@
             // labelValidation
             // 
             labelValidation.AutoSize = true;
-            labelValidation.Location = new Point(3, 104);
+            labelValidation.Location = new Point(3, 97);
             labelValidation.Name = "labelValidation";
             labelValidation.Size = new Size(0, 20);
             labelValidation.TabIndex = 7;
             // 
             // buttonClear
             // 
-            buttonClear.Location = new Point(385, 107);
+            buttonClear.Location = new Point(385, 100);
             buttonClear.Name = "buttonClear";
             buttonClear.Size = new Size(56, 29);
             buttonClear.TabIndex = 8;
@@ -190,6 +193,16 @@
             comboBoxFoodType.Name = "comboBoxFoodType";
             comboBoxFoodType.Size = new Size(151, 28);
             comboBoxFoodType.TabIndex = 10;
+            // 
+            // buttonDelete
+            // 
+            buttonDelete.Location = new Point(447, 100);
+            buttonDelete.Name = "buttonDelete";
+            buttonDelete.Size = new Size(94, 29);
+            buttonDelete.TabIndex = 11;
+            buttonDelete.Text = "Delete";
+            buttonDelete.UseVisualStyleBackColor = true;
+            buttonDelete.Click += buttonDelete_Click;
             // 
             // Form1
             // 
@@ -225,5 +238,6 @@
         private Button buttonClear;
         private Label labelFoodType;
         private ComboBox comboBoxFoodType;
+        private Button buttonDelete;
     }
 }

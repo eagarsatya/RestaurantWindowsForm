@@ -183,5 +183,29 @@ namespace RestaurantWindowsForm
         {
             ClearInput();
         }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            var selectedItem = this.listBoxMenu.SelectedItem as MenuModel;
+
+            if (selectedItem == null)
+            {
+                labelValidation.Text = "Can't find selected item";
+                return;
+            }
+
+            Menus.Remove(selectedItem);
+            var menuBindingSource = new BindingSource();
+            foreach (var menu in Menus)
+            {
+                menuBindingSource.Add(menu);
+            }
+
+            listBoxMenu.DataSource = menuBindingSource;
+            listBoxMenu.DisplayMember = "MenuName";
+
+            dataGridViewMenu.DataSource = menuBindingSource;
+            ClearInput();
+        }
     }
 }
