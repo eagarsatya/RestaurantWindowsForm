@@ -30,21 +30,16 @@
         {
             restaurantLabel = new Label();
             listBoxMenu = new ListBox();
-            dataGridViewMenu = new DataGridView();
-            labelMenu = new Label();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            labelMenuName = new Label();
             textBoxMenuName = new TextBox();
-            tableLayoutPanelInsert = new TableLayoutPanel();
+            labelFoodTheme = new Label();
+            textBoxFoodTheme = new TextBox();
+            labelIsAvailable = new Label();
+            checkBoxAvailable = new CheckBox();
             buttonAddMenu = new Button();
-            editButton = new Button();
-            labelLevelSpicy = new Label();
-            checkBoxLevelSpicy = new CheckBox();
-            labelValidation = new Label();
-            buttonClear = new Button();
-            labelFoodType = new Label();
-            comboBoxFoodType = new ComboBox();
-            buttonDelete = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewMenu).BeginInit();
-            tableLayoutPanelInsert.SuspendLayout();
+            labelNotification = new Label();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // restaurantLabel
@@ -53,171 +48,122 @@
             restaurantLabel.ForeColor = SystemColors.ActiveCaptionText;
             restaurantLabel.Location = new Point(37, 32);
             restaurantLabel.Name = "restaurantLabel";
-            restaurantLabel.Size = new Size(119, 20);
+            restaurantLabel.Size = new Size(134, 20);
             restaurantLabel.TabIndex = 0;
-            restaurantLabel.Text = "Label Restaurant";
+            restaurantLabel.Text = "Accelist Restaurant";
             // 
             // listBoxMenu
             // 
             listBoxMenu.FormattingEnabled = true;
             listBoxMenu.Location = new Point(37, 89);
             listBoxMenu.Name = "listBoxMenu";
-            listBoxMenu.Size = new Size(150, 104);
+            listBoxMenu.Size = new Size(223, 244);
             listBoxMenu.TabIndex = 1;
-            listBoxMenu.SelectedIndexChanged += listBoxMenu_SelectedIndexChanged;
             // 
-            // dataGridViewMenu
+            // tableLayoutPanel1
             // 
-            dataGridViewMenu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewMenu.Location = new Point(37, 240);
-            dataGridViewMenu.Name = "dataGridViewMenu";
-            dataGridViewMenu.RowHeadersWidth = 51;
-            dataGridViewMenu.Size = new Size(300, 188);
-            dataGridViewMenu.TabIndex = 2;
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.Controls.Add(labelMenuName, 0, 0);
+            tableLayoutPanel1.Controls.Add(textBoxMenuName, 1, 0);
+            tableLayoutPanel1.Controls.Add(labelFoodTheme, 0, 1);
+            tableLayoutPanel1.Controls.Add(textBoxFoodTheme, 1, 1);
+            tableLayoutPanel1.Controls.Add(labelIsAvailable, 0, 2);
+            tableLayoutPanel1.Controls.Add(checkBoxAvailable, 1, 2);
+            tableLayoutPanel1.Location = new Point(522, 119);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.Size = new Size(250, 214);
+            tableLayoutPanel1.TabIndex = 2;
             // 
-            // labelMenu
+            // labelMenuName
             // 
-            labelMenu.AutoSize = true;
-            labelMenu.Location = new Point(3, 0);
-            labelMenu.Name = "labelMenu";
-            labelMenu.Size = new Size(90, 20);
-            labelMenu.TabIndex = 0;
-            labelMenu.Text = "Menu Name";
+            labelMenuName.AutoSize = true;
+            labelMenuName.Location = new Point(3, 0);
+            labelMenuName.Name = "labelMenuName";
+            labelMenuName.Size = new Size(90, 20);
+            labelMenuName.TabIndex = 0;
+            labelMenuName.Text = "Menu Name";
             // 
             // textBoxMenuName
             // 
-            textBoxMenuName.Location = new Point(99, 3);
+            textBoxMenuName.Location = new Point(101, 3);
             textBoxMenuName.Name = "textBoxMenuName";
-            textBoxMenuName.Size = new Size(180, 27);
+            textBoxMenuName.Size = new Size(119, 27);
             textBoxMenuName.TabIndex = 1;
             // 
-            // tableLayoutPanelInsert
+            // labelFoodTheme
             // 
-            tableLayoutPanelInsert.ColumnCount = 5;
-            tableLayoutPanelInsert.ColumnStyles.Add(new ColumnStyle());
-            tableLayoutPanelInsert.ColumnStyles.Add(new ColumnStyle());
-            tableLayoutPanelInsert.ColumnStyles.Add(new ColumnStyle());
-            tableLayoutPanelInsert.ColumnStyles.Add(new ColumnStyle());
-            tableLayoutPanelInsert.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanelInsert.Controls.Add(textBoxMenuName, 1, 0);
-            tableLayoutPanelInsert.Controls.Add(labelMenu, 0, 0);
-            tableLayoutPanelInsert.Controls.Add(buttonAddMenu, 1, 3);
-            tableLayoutPanelInsert.Controls.Add(editButton, 2, 3);
-            tableLayoutPanelInsert.Controls.Add(labelLevelSpicy, 0, 1);
-            tableLayoutPanelInsert.Controls.Add(checkBoxLevelSpicy, 1, 1);
-            tableLayoutPanelInsert.Controls.Add(labelValidation, 0, 3);
-            tableLayoutPanelInsert.Controls.Add(buttonClear, 3, 3);
-            tableLayoutPanelInsert.Controls.Add(labelFoodType, 0, 2);
-            tableLayoutPanelInsert.Controls.Add(comboBoxFoodType, 1, 2);
-            tableLayoutPanelInsert.Controls.Add(buttonDelete, 4, 3);
-            tableLayoutPanelInsert.Location = new Point(371, 89);
-            tableLayoutPanelInsert.Name = "tableLayoutPanelInsert";
-            tableLayoutPanelInsert.RowCount = 4;
-            tableLayoutPanelInsert.RowStyles.Add(new RowStyle());
-            tableLayoutPanelInsert.RowStyles.Add(new RowStyle());
-            tableLayoutPanelInsert.RowStyles.Add(new RowStyle());
-            tableLayoutPanelInsert.RowStyles.Add(new RowStyle());
-            tableLayoutPanelInsert.Size = new Size(545, 198);
-            tableLayoutPanelInsert.TabIndex = 3;
+            labelFoodTheme.AutoSize = true;
+            labelFoodTheme.Location = new Point(3, 33);
+            labelFoodTheme.Name = "labelFoodTheme";
+            labelFoodTheme.Size = new Size(92, 20);
+            labelFoodTheme.TabIndex = 2;
+            labelFoodTheme.Text = "Food Theme";
+            // 
+            // textBoxFoodTheme
+            // 
+            textBoxFoodTheme.Location = new Point(101, 36);
+            textBoxFoodTheme.Name = "textBoxFoodTheme";
+            textBoxFoodTheme.Size = new Size(119, 27);
+            textBoxFoodTheme.TabIndex = 3;
+            // 
+            // labelIsAvailable
+            // 
+            labelIsAvailable.AutoSize = true;
+            labelIsAvailable.Location = new Point(3, 66);
+            labelIsAvailable.Name = "labelIsAvailable";
+            labelIsAvailable.Size = new Size(85, 20);
+            labelIsAvailable.TabIndex = 4;
+            labelIsAvailable.Text = "Is Available";
+            // 
+            // checkBoxAvailable
+            // 
+            checkBoxAvailable.AutoSize = true;
+            checkBoxAvailable.Location = new Point(101, 69);
+            checkBoxAvailable.Name = "checkBoxAvailable";
+            checkBoxAvailable.Size = new Size(93, 24);
+            checkBoxAvailable.TabIndex = 5;
+            checkBoxAvailable.Text = "Available";
+            checkBoxAvailable.UseVisualStyleBackColor = true;
             // 
             // buttonAddMenu
             // 
-            buttonAddMenu.Location = new Point(99, 100);
+            buttonAddMenu.Location = new Point(623, 355);
             buttonAddMenu.Name = "buttonAddMenu";
             buttonAddMenu.Size = new Size(94, 29);
-            buttonAddMenu.TabIndex = 2;
-            buttonAddMenu.Text = "Add";
+            buttonAddMenu.TabIndex = 3;
+            buttonAddMenu.Text = "Add Menu";
             buttonAddMenu.UseVisualStyleBackColor = true;
             buttonAddMenu.Click += buttonAddMenu_Click;
             // 
-            // editButton
+            // labelNotification
             // 
-            editButton.Location = new Point(285, 100);
-            editButton.Name = "editButton";
-            editButton.Size = new Size(94, 29);
-            editButton.TabIndex = 4;
-            editButton.Text = "Edit";
-            editButton.UseVisualStyleBackColor = true;
-            editButton.Click += editButton_Click;
-            // 
-            // labelLevelSpicy
-            // 
-            labelLevelSpicy.AutoSize = true;
-            labelLevelSpicy.Location = new Point(3, 33);
-            labelLevelSpicy.Name = "labelLevelSpicy";
-            labelLevelSpicy.Size = new Size(58, 20);
-            labelLevelSpicy.TabIndex = 5;
-            labelLevelSpicy.Text = "Is Spicy";
-            // 
-            // checkBoxLevelSpicy
-            // 
-            checkBoxLevelSpicy.AutoSize = true;
-            checkBoxLevelSpicy.Location = new Point(99, 36);
-            checkBoxLevelSpicy.Name = "checkBoxLevelSpicy";
-            checkBoxLevelSpicy.Size = new Size(52, 24);
-            checkBoxLevelSpicy.TabIndex = 6;
-            checkBoxLevelSpicy.Text = "Yes";
-            checkBoxLevelSpicy.UseVisualStyleBackColor = true;
-            // 
-            // labelValidation
-            // 
-            labelValidation.AutoSize = true;
-            labelValidation.Location = new Point(3, 97);
-            labelValidation.Name = "labelValidation";
-            labelValidation.Size = new Size(0, 20);
-            labelValidation.TabIndex = 7;
-            // 
-            // buttonClear
-            // 
-            buttonClear.Location = new Point(385, 100);
-            buttonClear.Name = "buttonClear";
-            buttonClear.Size = new Size(56, 29);
-            buttonClear.TabIndex = 8;
-            buttonClear.Text = "Clear";
-            buttonClear.UseVisualStyleBackColor = true;
-            buttonClear.Click += buttonClear_Click;
-            // 
-            // labelFoodType
-            // 
-            labelFoodType.AutoSize = true;
-            labelFoodType.Location = new Point(3, 63);
-            labelFoodType.Name = "labelFoodType";
-            labelFoodType.Size = new Size(78, 20);
-            labelFoodType.TabIndex = 9;
-            labelFoodType.Text = "Food Type";
-            // 
-            // comboBoxFoodType
-            // 
-            comboBoxFoodType.FormattingEnabled = true;
-            comboBoxFoodType.Location = new Point(99, 66);
-            comboBoxFoodType.Name = "comboBoxFoodType";
-            comboBoxFoodType.Size = new Size(151, 28);
-            comboBoxFoodType.TabIndex = 10;
-            // 
-            // buttonDelete
-            // 
-            buttonDelete.Location = new Point(447, 100);
-            buttonDelete.Name = "buttonDelete";
-            buttonDelete.Size = new Size(94, 29);
-            buttonDelete.TabIndex = 11;
-            buttonDelete.Text = "Delete";
-            buttonDelete.UseVisualStyleBackColor = true;
-            buttonDelete.Click += buttonDelete_Click;
+            labelNotification.AutoSize = true;
+            labelNotification.Location = new Point(800, 305);
+            labelNotification.Name = "labelNotification";
+            labelNotification.Size = new Size(88, 20);
+            labelNotification.TabIndex = 4;
+            labelNotification.Text = "Notification";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1000, 500);
-            Controls.Add(tableLayoutPanelInsert);
-            Controls.Add(dataGridViewMenu);
+            Controls.Add(labelNotification);
+            Controls.Add(buttonAddMenu);
+            Controls.Add(tableLayoutPanel1);
             Controls.Add(listBoxMenu);
             Controls.Add(restaurantLabel);
             Name = "Form1";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)dataGridViewMenu).EndInit();
-            tableLayoutPanelInsert.ResumeLayout(false);
-            tableLayoutPanelInsert.PerformLayout();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -226,18 +172,14 @@
 
         private Label restaurantLabel;
         private ListBox listBoxMenu;
-        private DataGridView dataGridViewMenu;
-        private Label labelMenu;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Label labelMenuName;
         private TextBox textBoxMenuName;
-        private TableLayoutPanel tableLayoutPanelInsert;
+        private Label labelFoodTheme;
+        private TextBox textBoxFoodTheme;
+        private Label labelIsAvailable;
+        private CheckBox checkBoxAvailable;
         private Button buttonAddMenu;
-        private Button editButton;
-        private Label labelLevelSpicy;
-        private CheckBox checkBoxLevelSpicy;
-        private Label labelValidation;
-        private Button buttonClear;
-        private Label labelFoodType;
-        private ComboBox comboBoxFoodType;
-        private Button buttonDelete;
+        private Label labelNotification;
     }
 }
