@@ -37,8 +37,13 @@
             textBoxFoodTheme = new TextBox();
             labelIsAvailable = new Label();
             checkBoxAvailable = new CheckBox();
+            labelRestaurant = new Label();
+            comboBoxRestaurant = new ComboBox();
             buttonAddMenu = new Button();
             labelNotification = new Label();
+            buttonEdit = new Button();
+            buttonClear = new Button();
+            buttonDelete = new Button();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -59,6 +64,7 @@
             listBoxMenu.Name = "listBoxMenu";
             listBoxMenu.Size = new Size(223, 244);
             listBoxMenu.TabIndex = 1;
+            listBoxMenu.SelectedIndexChanged += listBoxMenu_SelectedIndexChanged;
             // 
             // tableLayoutPanel1
             // 
@@ -69,15 +75,18 @@
             tableLayoutPanel1.Controls.Add(textBoxMenuName, 1, 0);
             tableLayoutPanel1.Controls.Add(labelFoodTheme, 0, 1);
             tableLayoutPanel1.Controls.Add(textBoxFoodTheme, 1, 1);
-            tableLayoutPanel1.Controls.Add(labelIsAvailable, 0, 2);
-            tableLayoutPanel1.Controls.Add(checkBoxAvailable, 1, 2);
-            tableLayoutPanel1.Location = new Point(522, 119);
+            tableLayoutPanel1.Controls.Add(labelIsAvailable, 0, 3);
+            tableLayoutPanel1.Controls.Add(checkBoxAvailable, 1, 3);
+            tableLayoutPanel1.Controls.Add(labelRestaurant, 0, 2);
+            tableLayoutPanel1.Controls.Add(comboBoxRestaurant, 1, 2);
+            tableLayoutPanel1.Location = new Point(345, 89);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowCount = 4;
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.Size = new Size(250, 214);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.Size = new Size(427, 244);
             tableLayoutPanel1.TabIndex = 2;
             // 
             // labelMenuName
@@ -91,7 +100,7 @@
             // 
             // textBoxMenuName
             // 
-            textBoxMenuName.Location = new Point(101, 3);
+            textBoxMenuName.Location = new Point(132, 3);
             textBoxMenuName.Name = "textBoxMenuName";
             textBoxMenuName.Size = new Size(119, 27);
             textBoxMenuName.TabIndex = 1;
@@ -107,7 +116,7 @@
             // 
             // textBoxFoodTheme
             // 
-            textBoxFoodTheme.Location = new Point(101, 36);
+            textBoxFoodTheme.Location = new Point(132, 36);
             textBoxFoodTheme.Name = "textBoxFoodTheme";
             textBoxFoodTheme.Size = new Size(119, 27);
             textBoxFoodTheme.TabIndex = 3;
@@ -115,7 +124,7 @@
             // labelIsAvailable
             // 
             labelIsAvailable.AutoSize = true;
-            labelIsAvailable.Location = new Point(3, 66);
+            labelIsAvailable.Location = new Point(3, 100);
             labelIsAvailable.Name = "labelIsAvailable";
             labelIsAvailable.Size = new Size(85, 20);
             labelIsAvailable.TabIndex = 4;
@@ -124,16 +133,33 @@
             // checkBoxAvailable
             // 
             checkBoxAvailable.AutoSize = true;
-            checkBoxAvailable.Location = new Point(101, 69);
+            checkBoxAvailable.Location = new Point(132, 103);
             checkBoxAvailable.Name = "checkBoxAvailable";
             checkBoxAvailable.Size = new Size(93, 24);
             checkBoxAvailable.TabIndex = 5;
             checkBoxAvailable.Text = "Available";
             checkBoxAvailable.UseVisualStyleBackColor = true;
             // 
+            // labelRestaurant
+            // 
+            labelRestaurant.AutoSize = true;
+            labelRestaurant.Location = new Point(3, 66);
+            labelRestaurant.Name = "labelRestaurant";
+            labelRestaurant.Size = new Size(123, 20);
+            labelRestaurant.TabIndex = 6;
+            labelRestaurant.Text = "Restaurant Name";
+            // 
+            // comboBoxRestaurant
+            // 
+            comboBoxRestaurant.FormattingEnabled = true;
+            comboBoxRestaurant.Location = new Point(132, 69);
+            comboBoxRestaurant.Name = "comboBoxRestaurant";
+            comboBoxRestaurant.Size = new Size(151, 28);
+            comboBoxRestaurant.TabIndex = 7;
+            // 
             // buttonAddMenu
             // 
-            buttonAddMenu.Location = new Point(623, 355);
+            buttonAddMenu.Location = new Point(377, 366);
             buttonAddMenu.Name = "buttonAddMenu";
             buttonAddMenu.Size = new Size(94, 29);
             buttonAddMenu.TabIndex = 3;
@@ -144,17 +170,50 @@
             // labelNotification
             // 
             labelNotification.AutoSize = true;
-            labelNotification.Location = new Point(800, 305);
+            labelNotification.Location = new Point(664, 350);
             labelNotification.Name = "labelNotification";
             labelNotification.Size = new Size(88, 20);
             labelNotification.TabIndex = 4;
             labelNotification.Text = "Notification";
+            // 
+            // buttonEdit
+            // 
+            buttonEdit.Location = new Point(502, 366);
+            buttonEdit.Name = "buttonEdit";
+            buttonEdit.Size = new Size(94, 29);
+            buttonEdit.TabIndex = 5;
+            buttonEdit.Text = "Edit Menu";
+            buttonEdit.UseVisualStyleBackColor = true;
+            buttonEdit.Click += buttonEdit_Click;
+            // 
+            // buttonClear
+            // 
+            buttonClear.Location = new Point(377, 418);
+            buttonClear.Name = "buttonClear";
+            buttonClear.Size = new Size(94, 29);
+            buttonClear.TabIndex = 6;
+            buttonClear.Text = "Clear Form";
+            buttonClear.UseVisualStyleBackColor = true;
+            buttonClear.Click += buttonClear_Click;
+            // 
+            // buttonDelete
+            // 
+            buttonDelete.Location = new Point(515, 422);
+            buttonDelete.Name = "buttonDelete";
+            buttonDelete.Size = new Size(94, 29);
+            buttonDelete.TabIndex = 7;
+            buttonDelete.Text = "Delete Menu";
+            buttonDelete.UseVisualStyleBackColor = true;
+            buttonDelete.Click += buttonDelete_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1000, 500);
+            Controls.Add(buttonDelete);
+            Controls.Add(buttonClear);
+            Controls.Add(buttonEdit);
             Controls.Add(labelNotification);
             Controls.Add(buttonAddMenu);
             Controls.Add(tableLayoutPanel1);
@@ -181,5 +240,10 @@
         private CheckBox checkBoxAvailable;
         private Button buttonAddMenu;
         private Label labelNotification;
+        private Button buttonEdit;
+        private Label labelRestaurant;
+        private ComboBox comboBoxRestaurant;
+        private Button buttonClear;
+        private Button buttonDelete;
     }
 }
